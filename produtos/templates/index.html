@@ -7,6 +7,15 @@
     <title>Schwi</title>
 </head>
 <body>
-    <h1>Hello Django</h1>
+    <h1>Hello</h1>
+    {% if products %}
+    <ul>
+        {% for prod in products %}
+        <li><a href="{% url 'productPage' prod.id %}">{{prod.name}}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>There's no products here :c</p>
+    {% endif %}
 </body>
 </html>

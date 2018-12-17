@@ -5,9 +5,7 @@ from django.db import models
 
 # Create your models here.
 
-class Product(object):
-
-    def __init__(self, name='', value='', description=''):
-        self.name = name,
-        self.value = value,
-        self.description = description
+class Product(models.Model):
+    name = models.CharField(max_length=255, null=False)
+    value = models.DecimalField(max_digits=5, decimal_places=2, null=False)
+    description = models.CharField(max_length=255, null=False)

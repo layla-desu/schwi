@@ -14,8 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from .views import index
+from .views import index, goToProduct
 
 urlpatterns = [
-    url(r'^$', index, name='index')
+    url(r'^$', index, name='index'),
+    url(r'^product/(?P<product_id>\d+)$', goToProduct, name='productPage')
 ]
